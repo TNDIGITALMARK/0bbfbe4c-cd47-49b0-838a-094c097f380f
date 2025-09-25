@@ -1,48 +1,59 @@
 @import "tailwindcss";
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+/* Gemstone Lights Design System
+Colors: Deep charcoal (#2C2C2C), warm gold (#D4AF37), pure white (#FFFFFF), subtle grays (#F5F5F5)
+Typography: Playfair Display (headings), Source Sans Pro (body)
 All colors MUST be HSL.
 */
 
 :root {
-  --background: 0 0% 100%;
-  --foreground: 222.2 84% 4.9%;
+  /* Gemstone Lights Color Palette */
+  --gemstone-charcoal: 0 0% 17.3%; /* #2C2C2C deep charcoal */
+  --gemstone-gold: 45 69% 52.5%; /* #D4AF37 warm gold */
+  --gemstone-white: 0 0% 100%; /* #FFFFFF pure white */
+  --gemstone-light-gray: 0 0% 96.1%; /* #F5F5F5 subtle gray */
+  --gemstone-medium-gray: 0 0% 64.7%; /* #A5A5A5 medium gray */
+  --gemstone-dark-gray: 0 0% 25.1%; /* #404040 dark gray */
 
-  --card: 0 0% 100%;
-  --card-foreground: 222.2 84% 4.9%;
+  /* Primary Theme Colors */
+  --background: var(--gemstone-charcoal);
+  --foreground: var(--gemstone-white);
 
-  --popover: 0 0% 100%;
-  --popover-foreground: 222.2 84% 4.9%;
+  --card: var(--gemstone-charcoal);
+  --card-foreground: var(--gemstone-white);
 
-  --primary: 222.2 47.4% 11.2%;
-  --primary-foreground: 210 40% 98%;
+  --popover: var(--gemstone-dark-gray);
+  --popover-foreground: var(--gemstone-white);
 
-  --secondary: 210 40% 96.1%;
-  --secondary-foreground: 222.2 47.4% 11.2%;
+  --primary: var(--gemstone-gold);
+  --primary-foreground: var(--gemstone-charcoal);
 
-  --muted: 210 40% 96.1%;
-  --muted-foreground: 215.4 16.3% 46.9%;
+  --secondary: var(--gemstone-dark-gray);
+  --secondary-foreground: var(--gemstone-white);
 
-  --accent: 210 40% 96.1%;
-  --accent-foreground: 222.2 47.4% 11.2%;
+  --muted: var(--gemstone-dark-gray);
+  --muted-foreground: var(--gemstone-medium-gray);
+
+  --accent: var(--gemstone-gold);
+  --accent-foreground: var(--gemstone-charcoal);
 
   --destructive: 0 84.2% 60.2%;
-  --destructive-foreground: 210 40% 98%;
+  --destructive-foreground: var(--gemstone-white);
 
-  --border: 214.3 31.8% 91.4%;
-  --input: 214.3 31.8% 91.4%;
-  --ring: 222.2 84% 4.9%;
+  --border: var(--gemstone-dark-gray);
+  --input: var(--gemstone-dark-gray);
+  --ring: var(--gemstone-gold);
 
   --radius: 0.5rem;
 
-  --sidebar-background: 0 0% 98%;
-  --sidebar-foreground: 240 5.3% 26.1%;
-  --sidebar-primary: 240 5.9% 10%;
-  --sidebar-primary-foreground: 0 0% 98%;
-  --sidebar-accent: 240 4.8% 95.9%;
-  --sidebar-accent-foreground: 240 5.9% 10%;
-  --sidebar-border: 220 13% 91%;
-  --sidebar-ring: 217.2 91.2% 59.8%;
+  --sidebar-background: var(--gemstone-charcoal);
+  --sidebar-foreground: var(--gemstone-white);
+  --sidebar-primary: var(--gemstone-gold);
+  --sidebar-primary-foreground: var(--gemstone-charcoal);
+  --sidebar-accent: var(--gemstone-dark-gray);
+  --sidebar-accent-foreground: var(--gemstone-white);
+  --sidebar-border: var(--gemstone-dark-gray);
+  --sidebar-ring: var(--gemstone-gold);
 }
 
 .dark {
@@ -160,4 +171,95 @@ All colors MUST be HSL.
 body {
   background-color: hsl(var(--background));
   color: hsl(var(--foreground));
+  font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+/* Typography */
+.font-playfair {
+  font-family: 'Playfair Display', serif;
+}
+
+.font-source-sans {
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+/* Gemstone Lights Custom Styles */
+.bg-gemstone-charcoal {
+  background-color: hsl(var(--gemstone-charcoal));
+}
+
+.bg-gemstone-gold {
+  background-color: hsl(var(--gemstone-gold));
+}
+
+.bg-gemstone-white {
+  background-color: hsl(var(--gemstone-white));
+}
+
+.bg-gemstone-light-gray {
+  background-color: hsl(var(--gemstone-light-gray));
+}
+
+.text-gemstone-gold {
+  color: hsl(var(--gemstone-gold));
+}
+
+.text-gemstone-white {
+  color: hsl(var(--gemstone-white));
+}
+
+.text-gemstone-charcoal {
+  color: hsl(var(--gemstone-charcoal));
+}
+
+.border-gemstone-gold {
+  border-color: hsl(var(--gemstone-gold));
+}
+
+/* Gold gradient button */
+.btn-gold-gradient {
+  background: linear-gradient(135deg, hsl(var(--gemstone-gold)) 0%, hsl(45 69% 45%) 100%);
+  color: hsl(var(--gemstone-charcoal));
+  transition: all 0.3s ease;
+}
+
+.btn-gold-gradient:hover {
+  background: linear-gradient(135deg, hsl(45 69% 45%) 0%, hsl(var(--gemstone-gold)) 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3);
+}
+
+/* Premium card hover effects */
+.premium-card {
+  transition: all 0.3s ease;
+  border: 1px solid hsl(var(--gemstone-dark-gray));
+}
+
+.premium-card:hover {
+  transform: translateY(-4px);
+  border-color: hsl(var(--gemstone-gold));
+  box-shadow: 0 12px 40px rgba(212, 175, 55, 0.15);
+}
+
+/* Before/after slider styles */
+.before-after-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius);
+}
+
+.before-after-slider {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 2px;
+  height: 100%;
+  background: hsl(var(--gemstone-gold));
+  cursor: ew-resize;
+  z-index: 10;
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
 }
